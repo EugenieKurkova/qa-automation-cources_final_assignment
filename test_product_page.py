@@ -7,7 +7,7 @@ from .page.basket_page import BasketPage
 
 link="http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear"
 
-
+@pytest.mark.need_review
 @pytest.mark.parametrize('link', [link,
 								  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1",
@@ -58,6 +58,7 @@ def test_guest_should_see_login_link_on_product_page(parametrized_browser):
 	page.should_be_login_link()
 
 
+@pytest.mark.need_review
 def test_guest_can_go_to_login_page_from_product_page(parametrized_browser):
 	link = "http://selenium1py.pythonanywhere.com"
 	page = ProductPage(parametrized_browser, url=link)
@@ -67,6 +68,7 @@ def test_guest_can_go_to_login_page_from_product_page(parametrized_browser):
 	login_page.should_be_login_page()
 
 
+@pytest.mark.need_review
 def test_guest_cant_see_product_in_basket_opened_from_product_page(parametrized_browser):
 	link = "http://selenium1py.pythonanywhere.com"
 	page = ProductPage(parametrized_browser, url=link)
@@ -96,6 +98,7 @@ class TestUserAddToBasketFromProductPage():
 		time.sleep(3)
 		page.should_be_authorized_user()
 
+	@pytest.mark.need_review
 	def test_user_can_add_product_to_basket(self, parametrized_browser):
 		page = ProductPage(parametrized_browser, url=link)
 		page.open()
