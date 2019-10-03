@@ -2,8 +2,6 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-login="mngr224739"
-password="tUsEdem"
 
 @pytest.fixture(scope="function")
 def browser():
@@ -13,30 +11,13 @@ def browser():
     print("\nquit browser..")
     browser.quit()
 
-#login password and parameters for guru99 project
-@pytest.fixture()
-def valid_login():
-    return login
-
-
-@pytest.fixture()
-def valid_password():
-    return password
-
-
-parameters=[
-    ("mngr224739", "tUsEdem", True),
-    ("mngr224738", "tUsEdem", False),
-    ("mngr224739", "tUsEde", False),
-    ("mngr224738", "tUsEde", False),
-]
-
 
 def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default="chrome",
                      help="Choose browser: chrome or firefox")
     parser.addoption('--language', action='store', default="en",
                      help="Choose language")
+
 
 @pytest.fixture(scope="function")
 def parametrized_browser(request):
