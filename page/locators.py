@@ -8,6 +8,7 @@ class LoginPageLocators():
     PASSWORD_CONFIRMATION_FIELD = (By.CSS_SELECTOR, "input#id_registration-password2")
     REGISTRATION_CONFIRM_BUTTON = (By.CSS_SELECTOR, "[name='registration_submit']")
 
+
 class ProductPageLocators():
     ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
     MESSAGE_BOOK_ADDED = (By.CSS_SELECTOR, "#messages div:nth-child(1) > div >strong")
@@ -16,11 +17,13 @@ class ProductPageLocators():
     BOOK_PRICE = (By.CSS_SELECTOR, ".product_main>p")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages div:nth-child(1) > div >strong")
 
+
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BASKET_LINK = (By.CSS_SELECTOR, "span.btn-group>a.btn-default")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+
 
 class BasketPageLocators():
     BOOK_IN_THE_BASKET = (By.CSS_SELECTOR, ".basket-items")

@@ -11,7 +11,6 @@ class TestLoginFromMainPage():
         page.open()
         page.should_be_login_link()
 
-
     def test_guest_can_go_to_login_page(self, parametrized_browser):
         link = "http://selenium1py.pythonanywhere.com"
         page = BasePage(parametrized_browser, url=link)
@@ -20,6 +19,7 @@ class TestLoginFromMainPage():
         login_page = LoginPage(parametrized_browser, parametrized_browser.current_url)
         login_page.should_be_login_page()
 
+
 def test_guest_cant_see_product_in_basket_opened_from_main_page(parametrized_browser):
     link = "http://selenium1py.pythonanywhere.com"
     page = BasePage(parametrized_browser, url=link)
@@ -27,6 +27,7 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(parametrized_bro
     page.go_to_basket_page()
     basket_page = BasketPage(parametrized_browser, parametrized_browser.current_url)
     basket_page.should_there_be_no_books_in_the_basket()
+
 
 def test_guest_can_see_empty_basket_opened_from_main_page(parametrized_browser):
     link = "http://selenium1py.pythonanywhere.com"

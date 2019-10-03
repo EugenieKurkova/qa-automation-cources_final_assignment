@@ -3,7 +3,6 @@ from .locators import BasketPageLocators
 
 class BasketPage(BasePage):
 	def should_be_basket_url(self):
-	# реализуйте проверку на корректный url адрес
 	    assert "basket" in self.browser.current_url, "Basket URL is not presented"
 
 	def should_there_be_no_books_in_the_basket(self):
